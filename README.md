@@ -19,13 +19,13 @@ so it ships first.
 
 ## Model
 
-| Property | Value |
-|---|---|
-| Upstream | [microsoft/TRELLIS.2](https://github.com/microsoft/TRELLIS.2) ([microsoft/TRELLIS.2-4B](https://huggingface.co/microsoft/TRELLIS.2-4B) on HF) |
-| License | MIT |
-| Parameters | 4.0 B, estimated (RFD 0026) |
-| bf16 | 8.0 GB |
-| Q4_K_M | 2.20 GB (not shipped — RFD 0038 pins bf16 as the ship format) |
+| Property   | Value                                                                                                                                         |
+| ---------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| Upstream   | [microsoft/TRELLIS.2](https://github.com/microsoft/TRELLIS.2) ([microsoft/TRELLIS.2-4B](https://huggingface.co/microsoft/TRELLIS.2-4B) on HF) |
+| License    | MIT                                                                                                                                           |
+| Parameters | 4.0 B, estimated (RFD 0026)                                                                                                                   |
+| bf16       | 8.0 GB                                                                                                                                        |
+| Q4_K_M     | 2.20 GB (not shipped — RFD 0038 pins bf16 as the ship format)                                                                                 |
 
 License independently checked, not just carried from the RFD: TRELLIS.2's own repo and model
 card state MIT, matching RFD 0038's table.
@@ -34,12 +34,12 @@ card state MIT, matching RFD 0038's table.
 
 `POST /predict`:
 
-| Input | Type | Default | Note |
-|---|---|---|---|
-| `image` | Path/URL/base64 | required | |
-| `texture_resolution` | int | 1024 | |
-| `decimation_target` | int | 210000 | Hard cap — `API_MAX_MESH_VERTICES` in `src/library/aiModelsCatalog.js`; a larger mesh fails the next stage |
-| `seed` | int | -1 | |
+| Input                | Type            | Default  | Note                                                                                                       |
+| -------------------- | --------------- | -------- | ---------------------------------------------------------------------------------------------------------- |
+| `image`              | Path/URL/base64 | required |                                                                                                            |
+| `texture_resolution` | int             | 1024     |                                                                                                            |
+| `decimation_target`  | int             | 210000   | Hard cap — `API_MAX_MESH_VERTICES` in `src/library/aiModelsCatalog.js`; a larger mesh fails the next stage |
+| `seed`               | int             | -1       |                                                                                                            |
 
 Returns `{glb, layer, seed, stub}` — `layer` is the base USD layer per RFD 0053, `glb` the
 transmission file recorded as an asset path (plain `usd-core` has no glTF file-format plugin,
