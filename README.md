@@ -14,4 +14,4 @@ The final stage is the GPU worker. The `contract` stage serves the same interfac
 
 ## Licence
 
-This repository states no licence of its own. The model it packages is MIT-licensed upstream.
+MIT. See [LICENSE](LICENSE). The model it packages is MIT-licensed upstream.
